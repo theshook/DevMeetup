@@ -10,13 +10,17 @@ export const store = new Vuex.Store({
         imageUrl: 'http://y101fm.com/images/articleimages/021417/2017-02-8-pub-beach-cebu-beyond-cebu-main.jpg',
         id: 'asdqwe',
         title: 'Meetup in Baguio',
-        date: '2017-11-28'
+        date: '2017-11-28',
+        location: 'Baguio',
+        description: 'Lion\'s head'
       },
       {
         imageUrl: 'http://www.philippinestogo.com/wp-content/uploads/2017/04/IMG_3971-1024x683.jpg',
         id: 'zxcqwse',
         title: 'Meetup in Lingayen',
-        date: '2017-11-29'
+        date: '2017-11-29',
+        location: 'Lingayen',
+        description: 'Asinan'
       }
     ],
     user: {
