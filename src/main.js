@@ -14,12 +14,18 @@ import {store} from './store'
 // Import date.js from filters folder under the src folder
 import DateFilter from './filters/date'
 
+// Import shared folder for alert
+import AlertCmp from './components/shared/Alert'
+
 Vue.use(Vuetify)
 
 Vue.config.productionTip = false
 
 // User the date.js that you imported from filter/date as a Global
 Vue.filter('date', DateFilter)
+
+// Register the Alert component
+Vue.component('app-alert', AlertCmp)
 
 /* eslint-disable no-new */
 new Vue({
