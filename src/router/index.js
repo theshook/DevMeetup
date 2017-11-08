@@ -8,6 +8,8 @@ import Profile from '@/components/User/Profile'
 import Signup from '@/components/User/Signup'
 import Signin from '@/components/User/Signin'
 
+import Error404 from '@/components/Error404'
+
 Vue.use(Router)
 
 export default new Router({
@@ -47,6 +49,11 @@ export default new Router({
       path: '/signin',
       name: 'Signin',
       component: Signin
+    },
+    {
+      path: '*',
+      name: 'Catch',
+      component: Error404
     }
   ],
   mode: 'history'

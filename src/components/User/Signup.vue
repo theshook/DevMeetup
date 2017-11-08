@@ -6,7 +6,7 @@
           <v-card>
             <v-card-text>
               <v-container>
-                <form @submit.prevent="onSignup()">
+                <form @submit.prevent="onSignup">
                    <v-layout row>
                     <v-flex xs12>
                       <v-text-field 
@@ -42,17 +42,6 @@
                   </v-layout>
                   <v-layout row>
                     <v-flex xs12>
-                      <v-text-field 
-                      name="zipcode"
-                      label="Zip Code"
-                      id="zipcode"
-                      v-model="zipcode"
-                      type="number"
-                      required></v-text-field>
-                    </v-flex>
-                  </v-layout>
-                  <v-layout row>
-                    <v-flex xs12>
                       <v-btn type="submit">Sign up</v-btn>
                     </v-flex>
                   </v-layout>
@@ -72,19 +61,27 @@ export default {
     return {
       email: '',
       password: '',
-      confirmPassword: '',
-      zipcode: ''
+      confirmPassword: ''
     }
   },
   computed: {
     comparePasswords () {
       return this.password !== this.confirmPassword ? 'Password do not match' : true
+    },
+    user () {
+      return this.$store.getters.user
+    }
+  },
+  watch: {
+    user (value) {
+      if (value !== null && value !== undefined) {
+        this.$router.push('/')
+      }
     }
   },
   methods: {
     onSignup () {
-      // Vuex
-      console.log({email: this.email, password: this.password, confirmPassword: this.confirmPassword, zipcode: this.zipcode})
+      this.$store.dispatch('signUserUp', {email: this.email, password: this.password})
     }
   }
 }
