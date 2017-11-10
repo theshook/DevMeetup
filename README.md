@@ -1,6 +1,7 @@
 # devmeetup
 
 > Vue + Vuetify + Firebase
+> You need to configure the main.js
 
 ## Build Setup
 
