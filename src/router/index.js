@@ -10,6 +10,8 @@ import Signin from '@/components/User/Signin'
 
 import Error404 from '@/components/Error404'
 
+import AuthGuard from './auth-guard'
+
 Vue.use(Router)
 
 export default new Router({
@@ -27,7 +29,8 @@ export default new Router({
     {
       path: '/meetup/new',
       name: 'CreateMeetup',
-      component: CreateMeetup
+      component: CreateMeetup,
+      beforeEnter: AuthGuard
     },
     {
       path: '/meetups/:id',
@@ -38,7 +41,8 @@ export default new Router({
     {
       path: '/profile',
       name: 'Profile',
-      component: Profile
+      component: Profile,
+      beforeEnter: AuthGuard
     },
     {
       path: '/signup',
@@ -55,6 +59,5 @@ export default new Router({
       name: 'Catch',
       component: Error404
     }
-  ],
-  mode: 'history'
+  ]
 })
