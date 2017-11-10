@@ -2,7 +2,7 @@
   "name": "devmeetup",
   "version": "1.0.0",
   "description": "Vue + Vuetify + Firebase",
-  "author": "theshook",
+  "author": "hjefernandez@gmail.com",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
